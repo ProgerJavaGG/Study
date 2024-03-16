@@ -1,23 +1,44 @@
+
 import java.util.Scanner;
 
-// ) Человек одевается в зависимости от температуры воздуха. Напишите программу, которая выводит сообщение:
-//•	«На улице холодно, нужно надеть шапку» — если температура ниже 5 градусов.
-//•	«Сегодня тепло, можно идти без шапки» — если температура воздуха выше 5 градусов.
-//При выполнении каждого условия выведите в консоль: «На улице … градусов, (вывести в зависимости от результата) нужно надеть шапку / можно идти без шапки».
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int a = scanner.nextByte();
-        if (a<5){
-            System.out.println(" «На улице холодно, а именно " + a + ", нужно надеть шапку. ");
+        int temperatureOutside = scanner.nextInt();
+        if (temperatureOutside < 5) {
+            System.out.println("На улице холодно, а именно " + temperatureOutside + ", нужно надеть шапку.");
+        } else {
+            System.out.println("На улице не холодно, а именно " + temperatureOutside + ", можно идти без шапки.");
         }
-        else {
-            System.out.println(" «На улице не холодно, а именно " + a + ", можно идти без шапки. ");
+
+        task6();
+        task7();
+        task8();
+    }
+
+    static void task6() {
+        for (int i = 0; i < 18; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
         }
+    }
 
+    static void task7() {
+        for (int i = 10; i > 0;) {
+            System.out.println(i);
+            i--;
+        }
+    }
 
-
-
-
+    static void task8() {
+        int expiredSum = 2459000;
+        int currentSum = 0;
+        int countMonths = 0;
+        while (expiredSum > currentSum) {
+            countMonths++;
+            currentSum += 15000;
+            System.out.println("Месяц " + countMonths + ", сумма " + currentSum);
+        }
     }
 }
